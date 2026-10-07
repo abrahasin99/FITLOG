@@ -11,7 +11,7 @@ const Navbar = () => {
   const { todayPlan, saved } = usePlan();
 
   return (
-    <div className="flex justify-between items-center px-6 py-2">
+    <div className="flex justify-between items-center p-10">
       <div className="flex gap-1">
         <Image src={logo} alt="Logo" />
         <h1 className="text-white">FITLOG</h1>
@@ -39,7 +39,7 @@ const Navbar = () => {
         {/* Plan button with yellow badge */}
         <button className="flex items-center gap-2 text-white">
           Plan
-          {todayPlan.length > 0 && (
+          {todayPlan.length >= 0 && (
             <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-yellow-400 px-1 text-xs font-bold text-black">
               {todayPlan.length}
             </span>
@@ -49,7 +49,7 @@ const Navbar = () => {
         {/* Saved button with white-outlined badge */}
         <button className="flex items-center gap-2 text-white">
           Saved
-          {saved.length > 0 && (
+          {saved.length >= 0 && (
             <span className="flex h-5 min-w-5 items-center justify-center rounded-full border border-white bg-transparent px-1 text-xs font-bold text-white">
               {saved.length}
             </span>

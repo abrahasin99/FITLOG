@@ -9,12 +9,13 @@ export default function LibrarySection({
   workouts,
 }: LibrarySectionProps) {
   return (
-    <section>
-      <h2>THE LIBRARY</h2>
+    <section className="p-7">
+      <h2 className="font-extrabold text-4xl">THE LIBRARY</h2>
 
-      <p>Twelve lifts covering every major muscle group.</p>
+      <p className="text-gray-400">Twelve lifts covering every major muscle group.</p>
+      <br></br>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-4 place-content-around">
         {workouts.map((workout) => (
           <WorkoutCard
             key={workout.id}
