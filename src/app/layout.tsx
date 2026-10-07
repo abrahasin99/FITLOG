@@ -1,20 +1,25 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
+import { PlanProvider } from "@/context/PlanContext";
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html>
+    <html lang="en">
       <body className="min-h-screen flex flex-col">
-        <Navbar />
+        <PlanProvider>
+          <Navbar />
 
-        <main className="flex-1">
-          <Hero />
-          {children}
-        </main>
+          <main className="flex-1">
+            {children}
+          </main>
 
-        <Footer />
+          <Footer />
+        </PlanProvider>
       </body>
     </html>
   );
