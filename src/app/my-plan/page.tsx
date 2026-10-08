@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { Workout } from "@/types";
 import { getWorkouts } from "@/utils/api";
 import { usePlan } from "@/context/PlanContext";
+import { toast } from "react-toastify";
 
 type Tab = "today" | "saved";
 type SortOption = "duration" | "caloriesBurned" | "rating";
@@ -85,13 +86,17 @@ export default function MyPlan() {
         <div className="border-l border-gray-800 p-3 sm:p-5">
           <p className="text-sm text-gray-500">Minutes</p>
 
-          <p className="mt-1 text-2xl font-bold text-white sm:text-3xl">{totalMinutes}</p>
+          <p className="mt-1 text-2xl font-bold text-white sm:text-3xl">
+            {totalMinutes}
+          </p>
         </div>
 
         <div className="border-l border-gray-800 p-3 sm:p-5">
           <p className="text-sm text-gray-500">Calories</p>
 
-          <p className="mt-1 text-2xl font-bold text-white sm:text-3xl">{totalCalories}</p>
+          <p className="mt-1 text-2xl font-bold text-white sm:text-3xl">
+            {totalCalories}
+          </p>
         </div>
       </div>
 
@@ -172,7 +177,9 @@ export default function MyPlan() {
                 />
 
                 <div className="min-w-0">
-                  <h3 className="break-words font-bold text-white">{workout.name}</h3>
+                  <h3 className="break-words font-bold text-white">
+                    {workout.name}
+                  </h3>
 
                   <p className="text-sm text-gray-500">{workout.equipment}</p>
 
@@ -197,7 +204,10 @@ export default function MyPlan() {
 
                 {activeTab === "today" && (
                   <button
-                    onClick={() => markAsDone(workout.id)}
+                    onClick={() => {
+                      markAsDone(workout.id);
+                      toast.success("Workout complete! You smashed it today!");
+                    }}
                     disabled={isCompleted(workout.id)}
                     className={`rounded-full px-4 py-2 text-xs font-medium ${
                       isCompleted(workout.id)
@@ -213,8 +223,10 @@ export default function MyPlan() {
                   onClick={() => {
                     if (activeTab === "today") {
                       removeFromToday(workout.id);
+                      toast.success("Workout removed from today's plan!");
                     } else {
                       removeFromSaved(workout.id);
+                      toast.success("Workout removed from saved plan!");
                     }
                   }}
                   className="px-2 text-gray-500 hover:text-white"
