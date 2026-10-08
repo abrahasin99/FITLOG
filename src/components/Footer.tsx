@@ -5,8 +5,7 @@ import logo from "../../assets/logo.png";
 const Footer = () => {
     return (
         <>
-        <hr className="border-t border-gray-300 my-4" />
-        <div className='flex justify-between items-center p-10'>
+        <div className='flex flex-col items-center gap-4 p-6 text-center sm:flex-row sm:justify-between sm:p-10 sm:text-left border-t border-[#24272d]'>
             <div className='flex'>
                 <Image src={logo} alt='logo'/>
                 <h1 className='font-bold'>FITLOG</h1>

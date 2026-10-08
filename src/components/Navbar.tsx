@@ -11,7 +11,7 @@ const Navbar = () => {
   const { todayPlan, saved } = usePlan();
 
   return (
-    <div className="flex justify-between items-center p-10">
+    <div className="flex flex-wrap justify-between items-center gap-x-6 gap-y-4 p-4 sm:p-6 lg:p-10 border-b border-[#24272d]">
       <div className="flex gap-1">
         <Image src={logo} alt="Logo" />
         <h1 className="text-white font-bold">FITLOG</h1>

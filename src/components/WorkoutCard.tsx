@@ -19,10 +19,11 @@ export default function WorkoutCard({ workout }: WorkoutCardProps) {
           alt={workout.name}
           width={700}
           height={700}
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="aspect-[4/3] w-full object-cover object-top"
         />
 
-        <div className="px-5 pb-4 pt-[18px]">
+        <div className="px-4 pb-4 pt-[18px] sm:px-5">
           <div className="flex flex-wrap gap-2">
             {workout.muscleGroups.map((muscle) => (
               <span
@@ -34,13 +35,13 @@ export default function WorkoutCard({ workout }: WorkoutCardProps) {
             ))}
           </div>
 
-          <h3 className="mb-1 mt-[18px] font-[family-name:var(--font-oswald)] text-[28px] font-bold uppercase leading-tight tracking-wide">
+          <h3 className="mb-1 mt-[18px] break-words font-[family-name:var(--font-oswald)] text-2xl font-bold uppercase leading-tight tracking-wide sm:text-[28px]">
             {workout.name}
           </h3>
 
           <p className="text-[15px] text-neutral-400">{workout.equipment}</p>
 
-          <div className="mt-[18px] flex gap-[18px] border-t border-neutral-800 pt-3.5 text-sm text-neutral-400">
+          <div className="mt-[18px] flex flex-wrap gap-x-[18px] gap-y-2 border-t border-neutral-800 pt-3.5 text-sm text-neutral-400">
             <span className="flex items-center gap-[7px]">
               <Clock size={18} aria-hidden /> {workout.duration} min
             </span>

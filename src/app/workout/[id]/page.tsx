@@ -73,8 +73,8 @@ export default function WorkoutDetailsPage() {
   const alreadySaved = isSaved(workout.id);
 
   return (
-    <main className="px-5 py-7">
-      <div className="grid grid-cols-2 gap-8">
+    <main className="px-4 py-6 sm:px-5 sm:py-7">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
 
         {/* IMAGE */}
         <div>
@@ -83,13 +83,14 @@ export default function WorkoutDetailsPage() {
             alt={workout.name}
             width={700}
             height={700}
+            sizes="(min-width: 768px) 50vw, 100vw"
             className="w-full rounded-xl object-cover"
           />
         </div>
 
         {/* DETAILS */}
-        <div>
-          <h1 className="text-4xl font-bold text-white">
+        <div className="min-w-0">
+          <h1 className="break-words text-3xl font-bold text-white sm:text-4xl">
             {workout.name}
           </h1>
 
@@ -98,7 +99,7 @@ export default function WorkoutDetailsPage() {
           </p>
 
           {/* MUSCLE GROUPS */}
-          <div className="mt-4 flex gap-2">
+          <div className="mt-4 flex flex-wrap gap-2">
             {workout.muscleGroups.map((muscle) => (
               <span
                 key={muscle}
@@ -111,65 +112,65 @@ export default function WorkoutDetailsPage() {
 
           {/* WORKOUT INFO */}
           <div className="mt-5 rounded-xl border border-gray-800">
-            <div className="flex justify-between border-b border-gray-800 p-4">
+            <div className="flex justify-between gap-4 border-b border-gray-800 p-3 sm:p-4">
               <span className="text-sm text-gray-400">
                 EQUIPMENT
               </span>
-              <span className="text-white">
+              <span className="text-right text-white">
                 {workout.equipment}
               </span>
             </div>
 
-            <div className="flex justify-between border-b border-gray-800 p-4">
+            <div className="flex justify-between gap-4 border-b border-gray-800 p-3 sm:p-4">
               <span className="text-sm text-gray-400">
                 DIFFICULTY
               </span>
-              <span className="text-white">
+              <span className="text-right text-white">
                 {workout.difficulty}
               </span>
             </div>
 
-            <div className="flex justify-between border-b border-gray-800 p-4">
+            <div className="flex justify-between gap-4 border-b border-gray-800 p-3 sm:p-4">
               <span className="text-sm text-gray-400">
                 SETS
               </span>
-              <span className="text-white">
+              <span className="text-right text-white">
                 {workout.sets}
               </span>
             </div>
 
-            <div className="flex justify-between border-b border-gray-800 p-4">
+            <div className="flex justify-between gap-4 border-b border-gray-800 p-3 sm:p-4">
               <span className="text-sm text-gray-400">
                 REPS
               </span>
-              <span className="text-white">
+              <span className="text-right text-white">
                 {workout.reps}
               </span>
             </div>
 
-            <div className="flex justify-between border-b border-gray-800 p-4">
+            <div className="flex justify-between gap-4 border-b border-gray-800 p-3 sm:p-4">
               <span className="text-sm text-gray-400">
                 DURATION
               </span>
-              <span className="text-white">
+              <span className="text-right text-white">
                 {workout.duration} min
               </span>
             </div>
 
-            <div className="flex justify-between border-b border-gray-800 p-4">
+            <div className="flex justify-between gap-4 border-b border-gray-800 p-3 sm:p-4">
               <span className="text-sm text-gray-400">
                 CALORIES
               </span>
-              <span className="text-white">
+              <span className="text-right text-white">
                 {workout.caloriesBurned} kcal
               </span>
             </div>
 
-            <div className="flex justify-between p-4">
+            <div className="flex justify-between gap-4 p-3 sm:p-4">
               <span className="text-sm text-gray-400">
                 RATING
               </span>
-              <span className="text-white">
+              <span className="text-right text-white">
                 {workout.rating}
               </span>
             </div>
@@ -193,7 +194,7 @@ export default function WorkoutDetailsPage() {
           </div>
 
           {/* BUTTONS */}
-          <div className="mt-6 flex gap-3">
+          <div className="mt-6 flex flex-wrap gap-3">
 
             {/* ADD TO TODAY'S PLAN */}
             <button

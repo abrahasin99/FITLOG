@@ -62,10 +62,10 @@ export default function MyPlan() {
   );
 
   return (
-    <main className="px-6 py-8">
+    <main className="px-4 py-6 sm:px-6 sm:py-8">
       {/* Header */}
       <div>
-        <h1 className="text-4xl font-bold text-white">MY PLAN</h1>
+        <h1 className="text-3xl font-bold text-white sm:text-4xl">MY PLAN</h1>
 
         <p className="mt-2 text-gray-400">
           Cap of five lifts for today. Finish them, then load more.
@@ -74,33 +74,33 @@ export default function MyPlan() {
 
       {/* Metrics */}
       <div className="mt-6 grid grid-cols-3 rounded-xl border border-gray-800 bg-[#15181f]">
-        <div className="p-5">
+        <div className="p-3 sm:p-5">
           <p className="text-sm text-gray-500">Exercises</p>
 
-          <p className="mt-1 text-3xl font-bold text-lime-400">
+          <p className="mt-1 text-2xl font-bold text-lime-400 sm:text-3xl">
             {currentWorkouts.length}
           </p>
         </div>
 
-        <div className="border-l border-gray-800 p-5">
+        <div className="border-l border-gray-800 p-3 sm:p-5">
           <p className="text-sm text-gray-500">Minutes</p>
 
-          <p className="mt-1 text-3xl font-bold text-white">{totalMinutes}</p>
+          <p className="mt-1 text-2xl font-bold text-white sm:text-3xl">{totalMinutes}</p>
         </div>
 
-        <div className="border-l border-gray-800 p-5">
+        <div className="border-l border-gray-800 p-3 sm:p-5">
           <p className="text-sm text-gray-500">Calories</p>
 
-          <p className="mt-1 text-3xl font-bold text-white">{totalCalories}</p>
+          <p className="mt-1 text-2xl font-bold text-white sm:text-3xl">{totalCalories}</p>
         </div>
       </div>
 
       {/* Tabs + Sort */}
-      <div className="mt-6 flex items-center justify-between">
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
         <div className="flex rounded-lg bg-[#15181f] p-1">
           <button
             onClick={() => setActiveTab("today")}
-            className={`rounded-md px-4 py-2 text-sm ${
+            className={`rounded-md px-3 py-2 text-sm sm:px-4 ${
               activeTab === "today"
                 ? "bg-[#242a34] text-white"
                 : "text-gray-500"
@@ -111,7 +111,7 @@ export default function MyPlan() {
 
           <button
             onClick={() => setActiveTab("saved")}
-            className={`rounded-md px-4 py-2 text-sm ${
+            className={`rounded-md px-3 py-2 text-sm sm:px-4 ${
               activeTab === "saved"
                 ? "bg-[#242a34] text-white"
                 : "text-gray-500"
@@ -161,22 +161,22 @@ export default function MyPlan() {
           currentWorkouts.map((workout) => (
             <div
               key={workout.id}
-              className="flex items-center justify-between rounded-xl border border-gray-800 bg-[#15181f] p-3"
+              className="flex flex-col gap-3 rounded-xl border border-gray-800 bg-[#15181f] p-3 sm:flex-row sm:items-center sm:justify-between"
             >
               {/* Left */}
-              <div className="flex items-center gap-4">
+              <div className="flex min-w-0 items-center gap-3 sm:gap-4">
                 <img
                   src={workout.image}
                   alt={workout.name}
-                  className="h-16 w-28 rounded-lg object-cover"
+                  className="h-16 w-24 shrink-0 rounded-lg object-cover sm:w-28"
                 />
 
-                <div>
-                  <h3 className="font-bold text-white">{workout.name}</h3>
+                <div className="min-w-0">
+                  <h3 className="break-words font-bold text-white">{workout.name}</h3>
 
                   <p className="text-sm text-gray-500">{workout.equipment}</p>
 
-                  <div className="mt-1 flex gap-3 text-xs text-gray-400">
+                  <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-400">
                     <span>◷ {workout.duration} min</span>
 
                     <span>● {workout.caloriesBurned} kcal</span>
@@ -187,7 +187,7 @@ export default function MyPlan() {
               </div>
 
               {/* Actions */}
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <Link
                   href={`/workout/${workout.id}`}
                   className="rounded-full border border-gray-700 px-4 py-2 text-xs text-white"

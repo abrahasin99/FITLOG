@@ -4,15 +4,15 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="px-6 py-4">
-      <div className="relative mx-auto flex min-h-83.75 max-w-350 items-center overflow-hidden rounded-xl border border-[#24272d] bg-[#15171c] px-10 py-12 md:px-12">
+    <section className="px-4 py-4 sm:px-6">
+      <div className="relative mx-auto flex min-h-83.75 max-w-350 items-center overflow-hidden rounded-xl border border-[#24272d] bg-[#15171c] px-6 py-8 sm:px-10 sm:py-12 md:px-12">
         {/* Left Content */}
-        <div className="relative z-10 max-w-137.5">
+        <div className="relative z-10 max-w-137.5 md:max-w-md lg:max-w-137.5">
           <p className="mb-5 text-xs font-bold tracking-widest text-lime-400">
             WORKOUT LIBRARY
           </p>
 
-          <h1 className="mb-4 text-4xl font-black uppercase leading-[0.95] tracking-tight text-white md:text-5xl">
+          <h1 className="mb-4 text-3xl font-black uppercase leading-[0.95] tracking-tight text-white sm:text-4xl md:text-5xl">
             Train with intent. Log <br /> every set.
           </h1>
 
@@ -37,7 +37,7 @@ const Hero = () => {
             alt="Workout illustration"
             width={300}
             height={300}
-            className="object-contain"
+            className="h-auto w-48 object-contain lg:w-75"
           />
         </div>
       </div>
