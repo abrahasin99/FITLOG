@@ -1,36 +1,176 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏋️ FitLog — Workout Library & Planner
 
-## Getting Started
+> **Train with intent. Log every set.**
 
-First, run the development server:
+FitLog is a modern workout planning web application designed to help users discover exercises, organize their daily workout plan, and save workouts for later.
+
+🔗 **Live Demo:** https://fitlog-bice-eight.vercel.app/
+
+---
+
+## ✨ Features
+
+### 1. 🏋️ Workout Library
+
+Browse a collection of workouts covering major muscle groups such as chest, back, legs, arms, shoulders, and core.
+
+Each workout provides useful information including:
+
+* Exercise name
+* Target muscle groups
+* Equipment
+* Duration
+* Calories burned
+* Difficulty
+* Rating
+* Sets & reps
+* Instructions
+
+### 2. 📋 Create Your Workout Plan
+
+Add workouts to your **My Plan** section and build a personalized workout routine based on your goals.
+
+### 3. ❤️ Save Favorite Workouts
+
+Save workouts that you want to revisit later and easily access them from the **Saved** section.
+
+### 4. 🔍 Search, Filter & Sort Workouts
+
+Quickly find suitable exercises by searching and filtering the workout library. Workouts can also be sorted based on useful metrics such as duration and calories burned.
+
+### 5. 📱 Responsive & Modern UI
+
+FitLog features a clean, dark-themed interface designed to provide a focused workout experience across different screen sizes.
+
+---
+
+## 📸 Screenshots
+
+### Exercise Library
+
+![FitLog Exercise Library](./assets/add_exercise.png)
+
+### Workout Log
+
+![FitLog Workout Log](./assets/log.png)
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology         | Purpose                                      |
+| ------------------ | -------------------------------------------- |
+| **Next.js**        | React framework and application architecture |
+| **React**          | Building reusable UI components              |
+| **TypeScript**     | Type-safe development                        |
+| **Tailwind CSS**   | Styling and responsive layouts               |
+| **React Toastify** | User feedback and notifications              |
+| **REST API**       | Fetching workout data                        |
+| **Next/Image**     | Optimized image rendering                    |
+| **Vercel**         | Deployment and hosting                       |
+
+---
+
+## 🧠 What I Practiced
+
+This project helped me practice several important concepts in modern React and Next.js development:
+
+* Next.js App Router
+* Server and Client Components
+* React Context API
+* Shared state management
+* `useState`, `useEffect`, and `useMemo`
+* TypeScript interfaces and type safety
+* API data fetching
+* Dynamic routing
+* Responsive design with Tailwind CSS
+* Reusable component architecture
+* Working with external APIs
+* Deploying a Next.js application with Vercel
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/your-repository-name.git
+```
+
+### 2. Navigate to the project
+
+```bash
+cd your-repository-name
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 5. Open the application
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Visit:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+http://localhost:3000
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📂 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```text
+fitlog/
+├── app/
+│   ├── workouts/
+│   ├── plan/
+│   ├── layout.tsx
+│   └── page.tsx
+│
+├── components/
+├── context/
+│   └── PlanContext.tsx
+│
+├── types/
+│   └── index.ts
+│
+├── utils/
+│   └── api.ts
+│
+├── assets/
+│   ├── exercise.png
+│   ├── log.png
+│   └── logo.png
+│
+├── public/
+└── README.md
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🌐 Live Project
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**FitLog:** https://fitlog-bice-eight.vercel.app/
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 👨‍💻 Author
+
+**Abu Raihan Tashin**
+
+Computer Science Undergraduate at BRAC University
+
+> **Learning. Improving. Delivering with integrity.**
+
+---
+
+⭐ If you like this project, consider giving the repository a star!
