@@ -9,7 +9,7 @@ export default function LibrarySection({
   workouts,
 }: LibrarySectionProps) {
   return (
-    <section className="p-7">
+    <section id="library" className="scroll-mt-6 p-7">
       <h2 className="font-extrabold text-4xl">THE LIBRARY</h2>
 
       <p className="text-gray-400">Twelve lifts covering every major muscle group.</p>

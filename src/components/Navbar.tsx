@@ -17,7 +17,7 @@ const Navbar = () => {
         <h1 className="text-white font-bold">FITLOG</h1>
       </div>
 
-      <div className="flex gap-2">
+      <div className="flex gap-4">
         <Link
           href="/"
           className={pathname === "/" ? "text-lime-200 drop-shadow-[0_0_10px_rgba(190,242,100,0.8)]" : "text-gray-400 hover:text-white"}
@@ -41,7 +41,7 @@ const Navbar = () => {
           <button className="flex items-center gap-2 text-white cursor-pointer">
             Plan
             {todayPlan.length >= 0 && (
-              <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-yellow-400 px-1 text-xs font-bold text-black">
+              <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-[#ccff00] px-1 text-xs font-bold text-black">
                 {todayPlan.length}
               </span>
             )}

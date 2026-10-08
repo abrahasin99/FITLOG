@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import type { Workout } from "@/types";
 import { usePlan } from "@/context/PlanContext";
+import { toast } from "react-toastify";
 
 export default function WorkoutDetailsPage() {
   const params = useParams();
@@ -196,7 +197,9 @@ export default function WorkoutDetailsPage() {
 
             {/* ADD TO TODAY'S PLAN */}
             <button
-              onClick={() => addToToday(workout.id)}
+              onClick={() =>{addToToday(workout.id);
+                toast.success("Workout added to your plan!")
+              }}
               disabled={alreadyInPlan}
               className="rounded-lg bg-lime-400 px-5 py-3 text-sm font-medium text-black disabled:cursor-not-allowed disabled:opacity-50"
             >
@@ -207,7 +210,7 @@ export default function WorkoutDetailsPage() {
 
             {/* SAVE FOR LATER */}
             <button
-              onClick={() => saveForLater(workout.id)}
+              onClick={() => {saveForLater(workout.id);toast.success("Saved to your plan!");}}
               disabled={alreadySaved}
               className="rounded-lg border border-gray-700 px-5 py-3 text-sm text-white disabled:cursor-not-allowed disabled:opacity-50"
             >

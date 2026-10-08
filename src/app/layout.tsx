@@ -2,6 +2,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { PlanProvider } from "@/context/PlanContext";
+import ToastProvider from "@/components/ToastProvider";
 
 export default function RootLayout({
   children,
@@ -13,6 +14,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col">
         <PlanProvider>
           <Navbar />
+          <ToastProvider/>
 
           <main className="flex-1">
             {children}
