@@ -9,7 +9,7 @@ const Footer = () => {
         <div className='flex justify-between items-center p-10'>
             <div className='flex'>
                 <Image src={logo} alt='logo'/>
-                <h1>FITLOG</h1>
+                <h1 className='font-bold'>FITLOG</h1>
             </div>
             <p className='text-[#6B7280] text-sm'>&copy; 2026 Fitlog &mdash; Workout Library. Train hard, log honest.</p>
         </div>

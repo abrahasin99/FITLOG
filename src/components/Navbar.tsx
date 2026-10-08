@@ -14,13 +14,13 @@ const Navbar = () => {
     <div className="flex justify-between items-center p-10">
       <div className="flex gap-1">
         <Image src={logo} alt="Logo" />
-        <h1 className="text-white">FITLOG</h1>
+        <h1 className="text-white font-bold">FITLOG</h1>
       </div>
 
       <div className="flex gap-2">
         <Link
           href="/"
-          className={pathname === "/" ? "text-yellow-400" : "text-gray-400"}
+          className={pathname === "/" ? "text-lime-200 drop-shadow-[0_0_10px_rgba(190,242,100,0.8)]" : "text-gray-400 hover:text-white"}
         >
           Workouts
         </Link>
@@ -28,7 +28,7 @@ const Navbar = () => {
         <Link
           href="/my-plan"
           className={
-            pathname === "/my-plan" ? "text-yellow-400" : "text-gray-400"
+            pathname === "/my-plan" ? "text-lime-200 drop-shadow-[0_0_10px_rgba(190,242,100,0.8)]" : "text-gray-400 hover:text-white"
           }
         >
           My Plan
@@ -37,24 +37,28 @@ const Navbar = () => {
 
       <div className="flex items-center gap-3">
         {/* Plan button with yellow badge */}
-        <button className="flex items-center gap-2 text-white">
-          Plan
-          {todayPlan.length >= 0 && (
-            <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-yellow-400 px-1 text-xs font-bold text-black">
-              {todayPlan.length}
-            </span>
-          )}
-        </button>
+        <Link href="/my-plan">
+          <button className="flex items-center gap-2 text-white cursor-pointer">
+            Plan
+            {todayPlan.length >= 0 && (
+              <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-yellow-400 px-1 text-xs font-bold text-black">
+                {todayPlan.length}
+              </span>
+            )}
+          </button>
+        </Link>
 
         {/* Saved button with white-outlined badge */}
-        <button className="flex items-center gap-2 text-white">
-          Saved
-          {saved.length >= 0 && (
-            <span className="flex h-5 min-w-5 items-center justify-center rounded-full border border-white bg-transparent px-1 text-xs font-bold text-white">
-              {saved.length}
-            </span>
-          )}
-        </button>
+        <Link href="/my-plan">
+          <button className="flex items-center gap-2 text-white cursor-pointer">
+            Saved
+            {saved.length >= 0 && (
+              <span className="flex h-5 min-w-5 items-center justify-center rounded-full border border-white bg-transparent px-1 text-xs font-bold text-white">
+                {saved.length}
+              </span>
+            )}
+          </button>
+        </Link>
       </div>
     </div>
   );
